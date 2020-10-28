@@ -44,9 +44,9 @@ class Model(nn.Module):
         self.anchors = {}
         self.classes = classes
 
-        self.threshold = config.get('threshold', 0.05)
+        self.threshold = config.get('threshold', 0.5)
         self.top_n = config.get('top_n', 1000)
-        self.nms = config.get('nms', 0.5)
+        self.nms = config.get('nms', 0.2)
         self.detections = config.get('detections', 100)
 
         self.stride = max([b.stride for _, b in self.backbones.items()])
